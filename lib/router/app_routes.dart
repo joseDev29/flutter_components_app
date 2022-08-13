@@ -8,6 +8,7 @@ abstract class RouteKeys {
   static const listViewBasic = 'listViewBasic';
   static const listViewSeparated = 'listViewSeparated';
   static const card = 'card';
+  static const alert = 'alert';
 }
 
 abstract class AppRouter {
@@ -35,6 +36,12 @@ abstract class AppRouter {
         icon: Icons.credit_card,
         name: 'Card',
         widget: const CardView()),
+    RouteItem(
+      route: RouteKeys.alert,
+      icon: Icons.notifications_outlined,
+      name: "Alert",
+      widget: const AlertView(),
+    )
   ];
 
   static List<RouteItem> getMenuRoutes() {
