@@ -25,6 +25,7 @@ class CustomCardType1 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 TextDangerButton(text: 'Cancel', onPressed: () {}),
+                const SizedBox(width: 4),
                 TextButton(
                   onPressed: () {},
                   child: const Text('Ok'),
