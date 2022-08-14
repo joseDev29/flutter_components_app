@@ -10,6 +10,7 @@ abstract class RouteKeys {
   static const card = 'card';
   static const alert = 'alert';
   static const avatar = 'avatar';
+  static const animated = 'animated';
 }
 
 abstract class AppRouter {
@@ -48,6 +49,12 @@ abstract class AppRouter {
       icon: Icons.account_circle_outlined,
       name: 'Avatar',
       widget: const AvatarView(),
+    ),
+    RouteItem(
+      route: RouteKeys.animated,
+      icon: Icons.play_circle_outline,
+      name: 'Animated container',
+      widget: const AnimatedView(),
     )
   ];
 
