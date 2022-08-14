@@ -9,6 +9,7 @@ abstract class RouteKeys {
   static const listViewSeparated = 'listViewSeparated';
   static const card = 'card';
   static const alert = 'alert';
+  static const avatar = 'avatar';
 }
 
 abstract class AppRouter {
@@ -41,6 +42,12 @@ abstract class AppRouter {
       icon: Icons.notifications_outlined,
       name: "Alert",
       widget: const AlertView(),
+    ),
+    RouteItem(
+      route: RouteKeys.avatar,
+      icon: Icons.account_circle_outlined,
+      name: 'Avatar',
+      widget: const AvatarView(),
     )
   ];
 
