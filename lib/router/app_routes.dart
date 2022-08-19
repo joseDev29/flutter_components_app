@@ -11,6 +11,7 @@ abstract class RouteKeys {
   static const alert = 'alert';
   static const avatar = 'avatar';
   static const animated = 'animated';
+  static const inputs = 'inputs';
 }
 
 abstract class AppRouter {
@@ -55,6 +56,12 @@ abstract class AppRouter {
       icon: Icons.play_circle_outline,
       name: 'Animated container',
       widget: const AnimatedView(),
+    ),
+    RouteItem(
+      route: RouteKeys.inputs,
+      icon: Icons.input_outlined,
+      name: 'Inputs',
+      widget: const InputsView(),
     )
   ];
 
