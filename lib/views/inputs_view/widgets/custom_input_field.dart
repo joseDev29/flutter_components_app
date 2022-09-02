@@ -8,9 +8,16 @@ class CustomInputField extends StatelessWidget {
   final IconData? icon;
   final IconData? prefixIcon;
   final IconData? sufixIcon;
+  final TextInputType? keyboardType;
+  final bool obscureText;
+  final String formProperty;
+  final Map<String, dynamic> formValues;
 
   const CustomInputField({
     Key? key,
+    required this.formProperty,
+    required this.formValues,
+    this.obscureText = false,
     this.labelText,
     this.hintText,
     this.helperText,
@@ -18,7 +25,9 @@ class CustomInputField extends StatelessWidget {
     this.icon,
     this.prefixIcon,
     this.sufixIcon,
-  }) : super(key: key);
+    this.keyboardType,
+  }) : //obscureText = obsureText ?? false,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +36,7 @@ class CustomInputField extends StatelessWidget {
       // initialValue: 'Eren Jeager',
       textCapitalization: TextCapitalization.words,
       onChanged: (value) {
-        debugPrint(value);
+        formValues[formProperty] = value;
       },
       validator: (value) {
         if (value == null) return 'Required value';
@@ -36,6 +45,9 @@ class CustomInputField extends StatelessWidget {
         }
       },
       autovalidateMode: AutovalidateMode.onUserInteraction,
+      keyboardType: keyboardType,
+      obscureText: obscureText,
+      initialValue: formValues[formProperty],
       decoration: InputDecoration(
         hintText: hintText,
         labelText: labelText,
