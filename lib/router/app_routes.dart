@@ -1,3 +1,4 @@
+import 'package:components_app/views/list_view_builder.dart';
 import 'package:components_app/views/slider_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ abstract class RouteKeys {
   static const animated = 'animated';
   static const inputs = 'inputs';
   static const slider = 'slider';
+  static const listViewBuilder = 'listViewBuilder';
 }
 
 abstract class AppRouter {
@@ -70,6 +72,12 @@ abstract class AppRouter {
       icon: Icons.tune_outlined,
       name: 'Slider & Checks',
       widget: const SliderView(),
+    ),
+    RouteItem(
+      route: RouteKeys.listViewBuilder,
+      icon: Icons.view_list_outlined,
+      name: 'List View Builder',
+      widget: const ListViewBuilderView(),
     ),
   ];
 
