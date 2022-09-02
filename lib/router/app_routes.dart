@@ -1,3 +1,4 @@
+import 'package:components_app/views/slider_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:components_app/models/models.dart';
@@ -12,6 +13,7 @@ abstract class RouteKeys {
   static const avatar = 'avatar';
   static const animated = 'animated';
   static const inputs = 'inputs';
+  static const slider = 'slider';
 }
 
 abstract class AppRouter {
@@ -62,7 +64,13 @@ abstract class AppRouter {
       icon: Icons.input_outlined,
       name: 'Inputs',
       widget: const InputsView(),
-    )
+    ),
+    RouteItem(
+      route: RouteKeys.slider,
+      icon: Icons.tune_outlined,
+      name: 'Slider & Checks',
+      widget: const SliderView(),
+    ),
   ];
 
   static List<RouteItem> getMenuRoutes() {
